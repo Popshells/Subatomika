@@ -10,6 +10,7 @@ body {
     font-family: 'Exo 2', sans-serif;
     margin: 0;
     padding: 0;
+    font-size: 16px; /* Default font size for larger screens */
 }
 
 /* Fullscreen sections */
@@ -178,9 +179,13 @@ body {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    body {
+        font-size: 18px; /* Slightly larger font for tablets */
+    }
+
     .card, .social-card {
         width: 90%;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .fixed-overlay img {
@@ -189,8 +194,12 @@ body {
 }
 
 @media (max-width: 480px) {
+    body {
+        font-size: 20px; /* Larger font for mobile phones */
+    }
+
     .card, .social-card {
-        font-size: 12px;
+        font-size: 18px;
     }
 
     .fixed-overlay img {
