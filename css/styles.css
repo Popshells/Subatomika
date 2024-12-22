@@ -148,7 +148,7 @@ body {
 
 .prologue {
     color: white;
-    padding: 60px;
+    padding: 20px;
     transition: transform 0.3s ease-in-out;
     transform: translateY(100%); /* Start off-screen */
 }
@@ -322,17 +322,59 @@ body {
     top: 20px; /* Adjust this value to set the desired distance from the top of the page */
     left: 0;
     width: 100%;
-    height: 150px; /* Adjust this value to set the desired height */
+    max-height: 300px; /* Set a maximum height for the overlay */
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     z-index: 1000; /* Ensure it is above other content */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 .fixed-overlay img {
-    max-width: 70%; /* Adjust as needed */
+    max-width: 100%; /* Ensure the image is responsive */
+    max-height: 100%; /* Ensure the image does not exceed the overlay's height */
     height: auto;
+    object-fit: contain; /* Maintain aspect ratio and fit within the container */
     transition: opacity 0.5s ease-out; /* Smooth transition for opacity */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .fixed-overlay {
+        padding: 10px; /* Adjust padding for smaller screens */
+        max-height: 200px; /* Adjust maximum height for smaller screens */
+    }
+
+    .fixed-overlay img {
+        max-width: 90%; /* Adjust image size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .fixed-overlay {
+        padding: 5px; /* Adjust padding for smaller screens */
+        max-height: 150px; /* Adjust maximum height for smaller screens */
+    }
+
+    .fixed-overlay img {
+        max-width: 80%; /* Adjust image size for smaller screens */
+    }
+}
+.prologue-container {
+    margin-top: 40px; /* Default margin-top for larger screens */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .prologue-container {
+        margin-top: 20px; /* Adjust margin-top for tablets and smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .prologue-container {
+        margin-top: 10px; /* Adjust margin-top for mobile devices */
+    }
 }

@@ -14,16 +14,16 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeImage = document.getElementById('fade-image');
-            window.addEventListener('scroll', function() {
-                const scrollTop = window.scrollY;
-                const maxScroll = 1600; // Adjust this value as needed
-                const opacity = Math.max(0, 1 - scrollTop / maxScroll);
-                fadeImage.style.opacity = opacity;
-            });
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeImage = document.getElementById('fade-image');
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const maxScroll = 1600; // Adjust this value as needed
+            const opacity = Math.max(0, 1 - scrollTop / maxScroll);
+            fadeImage.style.opacity = opacity;
         });
-    </script>
+    });
+</script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const prologue = document.querySelector('.prologue');
