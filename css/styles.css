@@ -13,6 +13,40 @@ body {
     font-size: 16px; /* Default font size for larger screens */
 }
 
+/* General body font size improvements */
+body {
+    font-size: 18px; /* Default for larger screens */
+    line-height: 1.8; /* Improve readability */
+}
+
+/* Responsive styles for different screen sizes */
+@media (max-width: 768px) {
+    body {
+        font-size: 20px; /* Slightly larger font for tablets */
+    }
+
+    .card, .social-card {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 24px; /* Increase font size for small screens */
+        line-height: 1.9; /* Further improve readability */
+    }
+
+    .card, .social-card {
+        font-size: 22px;
+        line-height: 1.8;
+    }
+
+    .scrollhint {
+        font-size: 1.5em;
+    }
+}
+
 /* Fullscreen sections */
 .bg0, .bg1, .bg2, .bg3, .bg4 {
     width: 100%;
