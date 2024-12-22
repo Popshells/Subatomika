@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
     <title>Subatomika</title>
     <meta name="description" content="Subatomika - An AI film series. Written and directed by Mars Dostal. A sci-fi punk culture thriller, set in 1986 Buenos Aires"/>
-    <meta name="keywords" content="Subatomika, Mars Dostal, AI, Arificial Intelligence, Film, Buenos Aires, series, Punk, Punk Culture, Coming-of-age, Thriller, Movie, Realistic, the 80s, Parakultural, Cemento, Posmoderno, Argentina "/>
+    <meta name="keywords" content="Subatomika, Mars Dostal, AI, Artificial Intelligence, Film, Buenos Aires, series, Punk, Punk Culture, Coming-of-age, Thriller, Movie, Realistic, the 80s, Parakultural, Cemento, Posmoderno, Argentina "/>
     <meta property="og:title" content="Subatomika - An AI film series.">
     <meta property="og:description" content="Subatomika is 1986 historical fiction AI film series. A coming-of-age, punk sci-fi tale set in 1980s Buenos Aires. Photo-realistic, action-packed time travel mystery about teens navigating newfound freedom under state oppression.">
     <meta property="og:image" content="images/Suba_thump_2.webp">
@@ -13,36 +13,63 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2:200">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const fadeImage = document.getElementById('fade-image');
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.scrollY;
-            const maxScroll = 1600; // Adjust this value as needed
-            const opacity = Math.max(0, 1 - scrollTop / maxScroll);
-            fadeImage.style.opacity = opacity;
-        });
-    });
-</script>
+    <style>
+        .youtube-video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .youtube-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .prologue.visible {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .prologue {
+            opacity: 0;
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const fadeImage = document.getElementById('fade-image');
             const prologue = document.querySelector('.prologue');
+
             window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) { // Adjust this value as needed
-                    prologue.classList.add('visible');
-                } else {
-                    prologue.classList.remove('visible');
+                const scrollTop = window.scrollY;
+                const maxScroll = 1600; // Adjust this value as needed
+
+                // Fade effect for the fixed overlay
+                if (fadeImage) {
+                    const opacity = Math.max(0, 1 - scrollTop / maxScroll);
+                    fadeImage.style.opacity = opacity;
+                }
+
+                // Prologue visibility logic
+                if (prologue) {
+                    if (scrollTop > 100) { // Adjust this value as needed
+                        prologue.classList.add('visible');
+                    } else {
+                        prologue.classList.remove('visible');
+                    }
                 }
             });
         });
     </script>
 </head>
 <body>
-    <!-- existing body content -->
+    <!-- Existing body content -->
     <div class="bg0">
         <div class="bg1">
             <div class="bg2">
-                <img src="images/Suba_thump_2.webp" srcset="images/Suba_thump_2.webp 2x" alt="Veronica screaming submerged in the atmosferic tank" class="bg3 bg4" />
+                <img src="images/Suba_thump_2.webp" srcset="images/Suba_thump_2.webp 2x" alt="Veronica screaming submerged in the atmospheric tank" class="bg3 bg4" />
             </div>
         </div>
     </div>
@@ -73,7 +100,7 @@
             </div>
     
             <div class="youtube-video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/d3AWy_HNCJs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/d3AWy_HNCJs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <div class="social-card">

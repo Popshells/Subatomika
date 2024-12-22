@@ -1,3 +1,8 @@
+/* Enable smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
 /* General styles */
 body {
     background-color: #2b2b2b; /* Dark grey background */
@@ -7,22 +12,34 @@ body {
     padding: 0;
 }
 
-/* Image styles */
+/* Fullscreen sections */
 .bg0, .bg1, .bg2, .bg3, .bg4 {
-    display: block;
     width: 100%;
-    height: auto;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Responsive images for fullscreen sections */
+.bg0 img, .bg1 img, .bg2 img, .bg3 img, .bg4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the section without distortion */
 }
 
 /* Scroll hint styles */
 .scrollhint {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2em;
+    font-size: 1.5em;
     color: white;
     animation: bounce 2s infinite;
+    z-index: 10;
 }
 
 @keyframes bounce {
@@ -43,6 +60,7 @@ body {
     width: 100%;
     text-align: center;
     padding: 10px 0;
+    z-index: 10;
 }
 
 .ribbon.top {
@@ -54,7 +72,7 @@ body {
 }
 
 .ribbon .big img, .ribbon .medium img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
 }
 
@@ -63,224 +81,91 @@ body {
     color: white;
 }
 
-/* Responsive title styles */
-.responsive-title {
-    width: 100%;
-    height: auto;
-    max-width: 800px; /* Maximum width for large screens */
-}
-
-@media (max-width: 1200px) {
-    .responsive-title {
-        max-width: 600px; /* Adjust for medium screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .responsive-title {
-        max-width: 400px; /* Adjust for small screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .responsive-title {
-        max-width: 300px; /* Adjust for very small screens */
-    }
-}
-
-/* Responsive subtitle styles */
-.responsive-subtitle {
-    width: 100%;
-    height: auto;
-    max-width: 400px; /* Maximum width for large screens */
-}
-
-@media (max-width: 1200px) {
-    .responsive-subtitle {
-        max-width: 300px; /* Adjust for medium screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .responsive-subtitle {
-        max-width: 200px; /* Adjust for small screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .responsive-subtitle {
-        max-width: 150px; /* Adjust for very small screens */
-    }
-}
-
-/* Bar styles */
-.bar {
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
-    text-align: center;
-    background-color: #2b2b2b; /* Dark grey background */
-}
-
-.bar .info {
-    display: inline-block;
-    max-width: 600px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 10px;
-}
-
-.bar .info p {
-    margin: 10px 0;
-    text-align: left; /* Left-align the text */
-}
-
-.bar .info .fade {
-    font-weight: bold;
-    color: #ffcc00; /* Highlight color */
-}
-.prologue-container {
-    background-color: #2b2b2b; /* Dark grey background */
-    padding: 20px;
-    position: relative;
-    z-index: 1; /* Ensure it is above other content */
-}
-
-.prologue {
-    color: white;
-    padding: 20px;
-    transition: transform 0.3s ease-in-out;
-    transform: translateY(100%); /* Start off-screen */
-}
-
-.prologue.visible {
-    transform: translateY(0); /* Move into view */
-}
-
-.prologue img.prologue-image {
-    display: block;
-    margin: 0 auto 20px; /* Center the image and add some margin below it */
-    max-width: 30%; /* Ensure the image is responsive */
-    height: auto;
-}
-.fixed-overlay {
-    position: fixed;
-    top: 25px; /* Adjust this value to set the desired distance from the top of the page */
-    left: 0;
-    width: 100%;
-    height: 140px; /* Adjust this value to set the desired height */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    z-index: 1000; /* Ensure it is above other content */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-}
-
-.fixed-overlay img {
-    max-width: 65%; /* Adjust as needed */
-    height: auto;
-}
-.prologue-card {
-    width: 90%; /* Set the width to 90% of the page */
-    margin: 0 auto; /* Center the card horizontally */
-    padding: 20px; /* Add some padding inside the card */
-    background-color: #2b2b2b; /* Dark grey background */
-    color: white; /* Text color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    text-align: left; /* Align text to the left */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-.video-card {
-    width: 90%; /* Set the width to 60% of the page */
-    margin: 0px auto; /* Center the card horizontally and add some margin above */
-    padding: 20px; /* Add some padding inside the card */
-    background-color: #2b2b2b; /* Dark grey background */
-    color: white; /* Text color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    text-align: left; /* Align text to the left */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-.info-card {
-    width: 90%; /* Set the width to 60% of the page */
-    margin: 0px auto; /* Center the card horizontally and add some margin above */
-    padding: 20px; /* Add some padding inside the card */
-    background-color: #2b2b2b; /* Dark grey background */
-    color: white; /* Text color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    text-align: left; /* Align text to the left */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-.video-card iframe {
+/* Content card styles */
+.card {
     width: 90%;
-    height: 700px; /* Adjust this value to set the desired height */
-    border: none; /* Remove border */
-}
-.social-card {
-    width: 90%; /* Set the width to 60% of the page */
-    margin: 20px auto; /* Center the card horizontally and add some margin above */
-    padding: 20px; /* Add some padding inside the card */
-    background-color: #2b2b2b; /* Dark grey background */
-    color: white; /* Text color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    text-align: left; /* Align text to the left */
-}
-
-.social-card {
-    width: 90%; /* Set the width to 60% of the page */
-    margin: 20px auto; /* Center the card horizontally and add some margin above */
-    padding: 20px; /* Add some padding inside the card */
-    background-color: #2b2b2b; /* Dark grey background */
-    color: white; /* Text color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    text-align: left; /* Align text to the left */
-}
-
-.social-card p {
-    margin: 10px 0; /* Add some margin to the paragraphs */
-}
-
-.social-card a {
-    color: white; /* Link color */
-    text-decoration: none; /* Remove underline from links */
-}
-
-.social-card a:hover {
-    text-decoration: underline; /* Underline links on hover */
-}
-
-.social-card i {
-    margin-right: 10px; /* Add some space between the icon and the text */
-}
-/* General styles for the cards */
-.prologue-container, .prologue-card, .info-card, .video-card, .social-card {
-    width: 100%;
+    max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #2b2b2b;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     text-align: left;
-    font-size: 16px; /* Default font size */
+    line-height: 1.6;
 }
 
-/* Specific styles for the video card */
-.video-card iframe {
-    width: 45%;
-    height: 500px;
+/* Video container for YouTube iframe */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    margin: 20px auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border: none;
 }
 
-/* Specific styles for the social card */
-.social-card a {
+/* Fixed header overlay */
+.fixed-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.fixed-overlay img {
+    max-width: 70%;
+    height: auto;
+}
+
+/* Prologue styles */
+.prologue-container {
+    padding: 20px;
+    margin: 40px auto;
+    text-align: center;
+    line-height: 1.8;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
     color: white;
+}
+
+.prologue img {
+    display: block;
+    margin: 20px auto;
+    max-width: 50%;
+    height: auto;
+}
+
+/* Social media card styles */
+.social-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.social-card a {
+    color: #ffcc00;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .social-card a:hover {
@@ -293,134 +178,26 @@ body {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .prologue-container, .prologue-card, .info-card, .video-card, .social-card {
+    .card, .social-card {
         width: 90%;
-        padding: 15px;
-        font-size: 14px; /* Adjust font size for tablets and smaller screens */
-    }
-
-    .video-card iframe {
-        height: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .prologue-container, .prologue-card, .info-card, .video-card, .social-card {
-        width: 100%;
-        padding: 10px;
-        font-size: 12px; /* Adjust font size for mobile devices */
-    }
-
-    .video-card iframe {
-        height: 200px;
+        font-size: 14px;
     }
 
     .fixed-overlay img {
         max-width: 90%;
     }
-
-    .prologue img.prologue-image {
-        max-width: 90%;
-    }
-}
-.fixed-overlay {
-    position: fixed;
-    top: 20px; /* Adjust this value to set the desired distance from the top of the page */
-    left: 0;
-    width: 100%;
-    max-height: 300px; /* Set a maximum height for the overlay */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    z-index: 1000; /* Ensure it is above other content */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
-.fixed-overlay img {
-    max-width: 100%; /* Ensure the image is responsive */
-    max-height: 100%; /* Ensure the image does not exceed the overlay's height */
-    height: auto;
-    object-fit: contain; /* Maintain aspect ratio and fit within the container */
-    transition: opacity 0.5s ease-out; /* Smooth transition for opacity */
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .fixed-overlay {
-        padding: 10px; /* Adjust padding for smaller screens */
-        max-height: 200px; /* Adjust maximum height for smaller screens */
+@media (max-width: 480px) {
+    .card, .social-card {
+        font-size: 12px;
     }
 
     .fixed-overlay img {
-        max-width: 90%; /* Adjust image size for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .fixed-overlay {
-        padding: 5px; /* Adjust padding for smaller screens */
-        max-height: 150px; /* Adjust maximum height for smaller screens */
+        max-width: 80%;
     }
 
-    .fixed-overlay img {
-        max-width: 80%; /* Adjust image size for smaller screens */
-    }
-}
-.prologue-container {
-    margin-top: 40px; /* Default margin-top for larger screens */
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .prologue-container {
-        margin-top: 20px; /* Adjust margin-top for tablets and smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .prologue-container {
-        margin-top: 10px; /* Adjust margin-top for mobile devices */
-    }
-}
-.youtube-video-container {
-    position: relative;
-    overflow: hidden;
-    width: 60%; /* Set the width to 50% */
-    margin: 0 auto; /* Center align the container */
-}
-
-.youtube-video-container::after {
-    display: block;
-    content: "";
-    padding-top: 56.25%; /* 16:9 aspect ratio */
-}
-
-.youtube-video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-.prologue-container {
-    margin-top: 40px; /* Default margin-top for larger screens */
-    font-size: 16px; /* Default font size for larger screens */
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .prologue-container {
-        margin-top: 20px; /* Adjust margin-top for tablets and smaller screens */
-        font-size: 14px; /* Adjust font size for tablets and smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .prologue-container {
-        margin-top: 10px; /* Adjust margin-top for mobile devices */
-        font-size: 14px; /* Adjust font size for mobile devices */
+    .scrollhint {
+        font-size: 1em;
     }
 }
