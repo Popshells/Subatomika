@@ -195,11 +195,12 @@ body {
 
 @media (max-width: 480px) {
     body {
-        font-size: 20px; /* Larger font for mobile phones */
+        font-size: 22px; /* Larger font for mobile phones */
     }
 
     .card, .social-card {
-        font-size: 18px;
+        font-size: 20px;
+        line-height: 1.8; /* Improve readability on smaller screens */
     }
 
     .fixed-overlay img {
@@ -207,6 +208,6 @@ body {
     }
 
     .scrollhint {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 }
