@@ -15,6 +15,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const fadeImage = document.getElementById('fade-image');
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.scrollY;
+                const maxScroll = 1600; // Adjust this value as needed
+                const opacity = Math.max(0, 1 - scrollTop / maxScroll);
+                fadeImage.style.opacity = opacity;
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
             const prologue = document.querySelector('.prologue');
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 100) { // Adjust this value as needed
@@ -39,9 +50,9 @@
     <div class="scrollhint noselect">∨</div>
 
     <div class="fixed-overlay">
-        <img src="images/subatomika.svg" alt="Subatomika" class="responsive-title"/>
+        <img src="images/subatomika.svg" alt="Subatomika" class="responsive-title" id="fade-image"/>
     </div>
-
+    
     <div class="prologue-container">
         <div class="prologue">
             <img src="images/aifilmseries.svg" alt="Subatomika AI film series" class="prologue-image"/>
