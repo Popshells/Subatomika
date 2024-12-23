@@ -245,3 +245,10 @@ body {
         font-size: 1.2em;
     }
 }
+/* Subtitle styles */
+.subtitle {
+    font-size: 1.5em; /* Adjust the size as needed */
+    font-weight: bold; /* Make it bold */
+    display: block; /* Ensure it takes up the full width */
+    margin-bottom: 10px; /* Add some space below */
+}
