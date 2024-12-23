@@ -118,14 +118,14 @@ body {
 
 /* Content card styles */
 .card {
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    width: 70%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: rgba(35, 35, 35, 0.7); /* Semi-transparent background */
     color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     text-align: left;
     line-height: 1.6;
 }
@@ -233,7 +233,7 @@ body {
     }
 
     .card, .social-card {
-        font-size: 24px;
+        font-size: 2px;
         line-height: 1.8; /* Improve readability on smaller screens */
     }
 

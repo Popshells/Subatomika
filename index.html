@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Add this line -->
     <title>Subatomika</title>
     <meta name="description" content="Subatomika - An AI film series. Written and directed by Mars Dostal. A sci-fi punk culture thriller, set in 1986 Buenos Aires"/>
     <meta name="keywords" content="Subatomika, Mars Dostal, AI, Artificial Intelligence, Film, Buenos Aires, series, Punk, Punk Culture, Coming-of-age, Thriller, Movie, Realistic, the 80s, Parakultural, Cemento, Posmoderno, Argentina "/>
@@ -45,27 +46,19 @@
             window.addEventListener('scroll', function() {
                 const scrollTop = window.scrollY;
                 const maxScroll = 1600; // Adjust this value as needed
+                const opacity = Math.max(0, 1 - scrollTop / maxScroll);
+                fadeImage.style.opacity = opacity;
 
-                // Fade effect for the fixed overlay
-                if (fadeImage) {
-                    const opacity = Math.max(0, 1 - scrollTop / maxScroll);
-                    fadeImage.style.opacity = opacity;
-                }
-
-                // Prologue visibility logic
-                if (prologue) {
-                    if (scrollTop > 100) { // Adjust this value as needed
-                        prologue.classList.add('visible');
-                    } else {
-                        prologue.classList.remove('visible');
-                    }
+                if (scrollTop > 100) { // Adjust this value as needed
+                    prologue.classList.add('visible');
+                } else {
+                    prologue.classList.remove('visible');
                 }
             });
         });
     </script>
 </head>
 <body>
-    <!-- Existing body content -->
     <div class="bg0">
         <div class="bg1">
             <div class="bg2">
@@ -98,7 +91,7 @@
                 <p>Inspired by real events, The Breakfast Club (1985) by John Hughes, and LOST (2004) by J.J. Abrams, Jeffrey Lieber, and Damon Lindelof, this series is a mashup of raw emotion, suspense, and unfiltered nostalgia.</p>
                 <p>The production of these series depends on your support, please subscribe.</p>
             </div>
-    
+
             <div class="youtube-video-container">
                 <iframe src="https://www.youtube.com/embed/d3AWy_HNCJs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
