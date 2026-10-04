@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Add this line -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subatomika</title>
     <meta name="description" content="Subatomika - An AI film series. Written and directed by Mars Dostal. A sci-fi punk culture thriller, set in 1986 Buenos Aires"/>
     <meta name="keywords" content="Subatomika, Mars Dostal, AI, Artificial Intelligence, Film, Buenos Aires, series, Punk, Punk Culture, Coming-of-age, Thriller, Movie, Realistic, the 80s, Parakultural, Cemento, Posmoderno, Argentina "/>
@@ -45,11 +45,11 @@
 
             window.addEventListener('scroll', function() {
                 const scrollTop = window.scrollY;
-                const maxScroll = 1600; // Adjust this value as needed
+                const maxScroll = 1600; 
                 const opacity = Math.max(0, 1 - scrollTop / maxScroll);
                 fadeImage.style.opacity = opacity;
 
-                if (scrollTop > 100) { // Adjust this value as needed
+                if (scrollTop > 100) { 
                     prologue.classList.add('visible');
                 } else {
                     prologue.classList.remove('visible');
@@ -96,13 +96,19 @@
                 <iframe src="https://www.youtube.com/embed/d3AWy_HNCJs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
-            <div class="social-card" style="font-size: 24px; line-height: 1.8;"> <!-- Added inline styles -->
+            <div class="social-card" style="font-size: 24px; line-height: 1.8;">
                 <p><strong>Social:</strong></p>
                 <p><a href="https://www.instagram.com/subatomika/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></p>
                 <p><a href="https://www.tiktok.com/@subatomika" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></p>
                 <p><a href="https://bsky.app/profile/subatomika.bsky.social" target="_blank"><i class="fab fa-bluesky"></i> Bluesky</a></p>
                 <p><a href="https://www.youtube.com/@subatomika" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></p>
             </div>
+
+            <!-- Added test baseline text here -->
+            <p style="text-align: center; margin-top: 40px; font-size: 18px; color: #cccccc; font-style: italic;">
+                Survive the night or do it over
+            </p>
+
         </div>
     </div>
 </body>
