@@ -40,9 +40,18 @@
 
         .prologue {
             opacity: 0;
-            /* Added margin constraints to prevent ultra-wide text reading */
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        /* Override the external styles.css 50% max-width rule to allow full-width images */
+        .prologue img {
+            max-width: 100% !important;
+        }
+
+        .prologue-image {
+            width: 100%;
+            margin-bottom: 30px;
         }
 
         .info-card {
@@ -69,6 +78,25 @@
         .info-card p {
             margin-bottom: 20px;
             line-height: 1.8;
+        }
+
+        /* Inline Feature Images and Captions */
+        .inline-feature-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: block;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 14px;
+            color: #ccc;
+            font-family: 'Share Tech Mono', monospace;
+            margin-bottom: 40px;
+            font-style: italic;
         }
 
         .social-card {
@@ -115,7 +143,7 @@
                 const scrollTop = window.scrollY;
                 const maxScroll = 1600; 
                 const opacity = Math.max(0, 1 - scrollTop / maxScroll);
-                fadeImage.style.opacity = opacity;
+                if(fadeImage) fadeImage.style.opacity = opacity;
 
                 if (scrollTop > 100) { 
                     prologue.classList.add('visible');
@@ -130,7 +158,6 @@
     <div class="bg0">
         <div class="bg1">
             <div class="bg2">
-                <!-- Smart picture tag swaps to the 9:16 mobile image on screens narrower than 768px -->
                 <picture class="bg3 bg4">
                     <source media="(max-width: 768px)" srcset="images/AI_films_13_mobile.webp">
                     <img src="images/AI_films_13.webp" srcset="images/AI_films_13.webp 2x" alt="MARS DOSTAL AI FILMS PRESENTS - Black and white grainy photograph of five actors in underground 1986 goth punk leather jackets, with Marce holding a small Super 8 camera" style="width: 100%; height: 100%; object-fit: cover;" />
@@ -141,9 +168,11 @@
 
     <div class="scrollhint noselect">∨</div>
 
+    <!-- Commented out fixed overlay title to reveal the background image text
     <div class="fixed-overlay">
         <img src="images/subatomika.svg" alt="Subatomika" class="responsive-title" id="fade-image"/>
     </div>
+    -->
     
     <div class="prologue-container">
         <div class="prologue">
@@ -151,10 +180,13 @@
             
             <div class="info-card">
                 <div class="section-heading">WHAT: The World of Subatomika</div>
-                <p>SUBATOMIKA – EPISODE ONE: PARTY CRASHERS is a visceral, neon-soaked sci-fi thriller set in the exact moment Argentina ended a military dictatorship. It’s Friday, October 10, 1986. 3:00 AM in Buenos Aires. The nightmare is over, but the paranoia is still baked into the concrete.</p>
-                <p>The story follows a crew of cynical, underground young adults—Verushka, Rolly Bombón, Martu, Dana Red, and Marcel L—crashing parties in Palermo Viejo. They’re dressed in black leather, torn nylon, and spiked green hair, living like there’s no tomorrow. And they might be right. Because it’s Day Zero. The timeline is liquefying around them, changing and collapsing into something unrecognizable. A crew of alien saboteurs are altering the past, rewriting reality to cover their tracks before human intelligence agencies can capture and weaponize them.</p>
+                <p>SUBATOMIKA – EPISODE ONE: PARTY CRASHERS is a visceral punk subculture sci-fi thriller set right after Argentina ended a military dictatorship. It’s Friday, October 10, 1986. 3:00 AM in Buenos Aires. The nightmare is over, but the paranoia is still baked into the concrete.</p>
+                <p>The story follows a crew of cynical, underground young adults—Verushka, Rolly Bombón, Dana Red, Martu, and Marcel L—crashing parties in Palermo Viejo. They’re dressed in black leather, torn nylon, and spiked green hair, living like there’s no tomorrow. And they might be right. Because it’s Day Zero. The timeline is liquefying around them, changing and collapsing into something unrecognizable. A crew of stranded aliens are altering the past, rewriting reality to cover their tracks before human intelligence agencies can capture and weaponize them.</p>
                 <p>More than a visual adaptation of my original novel, Subatomika 1986; this is a time capsule, an attempt to let you look into the past and imagine its future the way Verushka does. It’s about the reckless, uncompromised energy of youth colliding with a massive, terrifying conspiracy. The visuals capture the gritty, fast-paced, punk-rock cadence of a generation that refused to stay quiet, set to a heavy synth-and-bass soundtrack composed by Votrox and myself.</p>
             </div>
+
+            <!-- Image placed below the WHAT section -->
+            <img src="images/actors_height.webp" alt="Actors Height Scale" class="inline-feature-image" />
 
             <div class="info-card">
                 <div class="section-heading">WHY: The Pitch & The Hustle</div>
@@ -163,12 +195,25 @@
                 <p>But Subatomika is too visual, too urgent to just sit on a hard drive as a manuscript. I needed a pilot to show, not just tell. I want to pitch this directly to Netflix or Prime Video, and to do that, they need to feel the vibe. AI gave me the Hollywood studio lot I couldn't afford. This isn’t some random generative experiment; this is a highly directed, fully realized proof-of-concept. It proves that the world of Subatomika is marketable, visually stunning, and ready for a green light. It’s a premium sci-fi thriller with a totally unique cultural fingerprint, and this pilot is the battering ram to get it onto screens.</p>
             </div>
 
+            <!-- Image placed below the WHY section -->
+            <img src="images/SubPoster_42.webp" alt="Subatomika Poster" class="inline-feature-image" />
+
             <div class="info-card">
                 <div class="section-heading">HOW: The Solo Studio</div>
                 <p>I didn't just type a prompt and cross my fingers. Subatomika is the result of years of deep historical research and the heavy lifting of writing a 300+ page novel. To bring it to the screen, I had to merge the mindset of an author with my real-world filmmaking and audiovisual experience.</p>
                 <p>For the past three years—basically since AI video generation was born—I’ve been building this universe shot by shot. I turned my workspace into a solo digital studio (Mars Dostal AI Films). I built massive, complex relational databases and character bibles to force the models to understand who these actors are, how they move, what their nervous tics are, and the heavy historical trauma driving their dialogue.</p>
-                <p>I’ve been using a wild mix of open-source local tools, custom workflows, and every advanced AI model available to act as my crew. AI didn’t write or direct this; it assisted me through every brutal stage of pre-production, production, and post. From locking in the exact look of Rolly’s bleached hair to generating the temporal shifts and mixing the audio, this was a massive solo journey to prove that if the story is strong enough, the technology exists right now to put it right in front of your eyes.</p>
+                <p>I’ve been using a wild mix of open-source local tools, custom workflows (see images below), and every advanced AI model available to act as my crew. AI didn’t write or direct this; it assisted me through every brutal stage of pre-production, production, and post. From locking in the exact look of Rolly’s bleached hair to generating the temporal shifts and mixing the audio, this was a massive solo journey to prove that if the story is strong enough, the technology exists right now to put it right in front of your eyes.</p>
             </div>
+
+            <!-- Workflow App Images Section -->
+            <img src="images/Custom_Frame_mixing%20App.webp" alt="Temporal Mix FXs App" class="inline-feature-image" />
+            <div class="image-caption">Temporal Mix FXs and utilities custom App</div>
+
+            <img src="images/CustomPropmtHub.webp" alt="Prompt Database App" class="inline-feature-image" />
+            <div class="image-caption">Actors & Prompt Custom database App</div>
+
+            <img src="images/Customized_Chatterbox.webp" alt="Chatterbox App" class="inline-feature-image" />
+            <div class="image-caption">Heavily customized Chatterbox App with Actors voice presets to modify, Dub and generate dialogs</div>
 
             <!-- Commented out YouTube Embed Block -->
             <!-- 
