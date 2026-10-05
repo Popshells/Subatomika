@@ -7,14 +7,12 @@
     <meta name="description" content="Subatomika - An AI film series. Written and directed by Mars Dostal. A sci-fi punk culture thriller, set in 1986 Buenos Aires"/>
     <meta name="keywords" content="Subatomika, Mars Dostal, AI, Artificial Intelligence, Film, Buenos Aires, series, Punk, Punk Culture, Coming-of-age, Thriller, Movie, Realistic, the 80s, Parakultural, Cemento, Posmoderno, Argentina "/>
     
-    <!-- Updated Open Graph meta tags for the new image -->
     <meta property="og:title" content="Subatomika - An AI film series.">
     <meta property="og:description" content="Subatomika is 1986 historical fiction AI film series. A coming-of-age, punk sci-fi tale set in 1980s Buenos Aires. Photo-realistic, action-packed time travel mystery about teens navigating newfound freedom under state oppression.">
     <meta property="og:image" content="images/AI_films_13.webp">
     <meta property="og:url" content="/">
     <meta name="twitter:card" content="summary_large_image">
     
-    <!-- Fonts and Styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2:200">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -23,7 +21,7 @@
     <style>
         .youtube-video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
         }
@@ -42,13 +40,15 @@
 
         .prologue {
             opacity: 0;
+            /* Added margin constraints to prevent ultra-wide text reading */
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* Subatomika 1986 Punk/Neon Overrides */
         .info-card {
             text-align: left;
-            background-color: rgba(15, 15, 15, 0.9); /* Darker, grittier container */
-            border-left: 4px solid #39ff14; /* Toxic neon green accent */
+            background-color: rgba(15, 15, 15, 0.9);
+            border-left: 4px solid #39ff14;
             padding: 30px;
             margin-bottom: 30px;
             border-radius: 4px;
@@ -57,7 +57,7 @@
 
         .section-heading {
             font-family: 'Share Tech Mono', monospace;
-            color: #ff0055; /* Neon pink/red */
+            color: #ff0055; 
             text-transform: uppercase;
             font-size: 1.4em;
             letter-spacing: 1.5px;
@@ -71,7 +71,6 @@
             line-height: 1.8;
         }
 
-        /* Revamped Social Card */
         .social-card {
             background-color: rgba(15, 15, 15, 0.9);
             border: 1px solid #333;
@@ -96,6 +95,15 @@
         .social-card a:hover {
             color: #39ff14;
             text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+        }
+
+        .ip-footer {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 14px;
+            color: #666;
+            font-family: 'Share Tech Mono', monospace;
+            padding: 20px;
         }
     </style>
     <script>
@@ -122,8 +130,11 @@
     <div class="bg0">
         <div class="bg1">
             <div class="bg2">
-                <!-- Updated Image Source, srcset, and Alt Text -->
-                <img src="images/AI_films_13.webp" srcset="images/AI_films_13.webp 2x" alt="MARS DOSTAL AI FILMS PRESENTS - Black and white grainy photograph of five actors in underground 1986 goth punk leather jackets, with Marce holding a small Super 8 camera" class="bg3 bg4" />
+                <!-- Smart picture tag swaps to the 9:16 mobile image on screens narrower than 768px -->
+                <picture class="bg3 bg4">
+                    <source media="(max-width: 768px)" srcset="images/AI_films_13_mobile.webp">
+                    <img src="images/AI_films_13.webp" srcset="images/AI_films_13.webp 2x" alt="MARS DOSTAL AI FILMS PRESENTS - Black and white grainy photograph of five actors in underground 1986 goth punk leather jackets, with Marce holding a small Super 8 camera" style="width: 100%; height: 100%; object-fit: cover;" />
+                </picture>
             </div>
         </div>
     </div>
@@ -138,7 +149,6 @@
         <div class="prologue">
             <img src="images/aifilmseries.svg" alt="Subatomika AI film series" class="prologue-image"/>
             
-            <!-- NEW SECTION: WHAT -->
             <div class="info-card">
                 <div class="section-heading">WHAT: The World of Subatomika</div>
                 <p>SUBATOMIKA – EPISODE ONE: PARTY CRASHERS is a visceral, neon-soaked sci-fi thriller set in the exact moment Argentina ended a military dictatorship. It’s Friday, October 10, 1986. 3:00 AM in Buenos Aires. The nightmare is over, but the paranoia is still baked into the concrete.</p>
@@ -146,7 +156,6 @@
                 <p>More than a visual adaptation of my original novel, Subatomika 1986; this is a time capsule, an attempt to let you look into the past and imagine its future the way Verushka does. It’s about the reckless, uncompromised energy of youth colliding with a massive, terrifying conspiracy. The visuals capture the gritty, fast-paced, punk-rock cadence of a generation that refused to stay quiet, set to a heavy synth-and-bass soundtrack composed by Votrox and myself.</p>
             </div>
 
-            <!-- NEW SECTION: WHY -->
             <div class="info-card">
                 <div class="section-heading">WHY: The Pitch & The Hustle</div>
                 <p>Why make this using AI? Simple: I have a massive, cinematic vision and a budget of absolutely zero.</p>
@@ -154,7 +163,6 @@
                 <p>But Subatomika is too visual, too urgent to just sit on a hard drive as a manuscript. I needed a pilot to show, not just tell. I want to pitch this directly to Netflix or Prime Video, and to do that, they need to feel the vibe. AI gave me the Hollywood studio lot I couldn't afford. This isn’t some random generative experiment; this is a highly directed, fully realized proof-of-concept. It proves that the world of Subatomika is marketable, visually stunning, and ready for a green light. It’s a premium sci-fi thriller with a totally unique cultural fingerprint, and this pilot is the battering ram to get it onto screens.</p>
             </div>
 
-            <!-- NEW SECTION: HOW -->
             <div class="info-card">
                 <div class="section-heading">HOW: The Solo Studio</div>
                 <p>I didn't just type a prompt and cross my fingers. Subatomika is the result of years of deep historical research and the heavy lifting of writing a 300+ page novel. To bring it to the screen, I had to merge the mindset of an author with my real-world filmmaking and audiovisual experience.</p>
@@ -179,6 +187,10 @@
             <p style="text-align: center; margin-top: 40px; font-size: 18px; color: #cccccc; font-style: italic;">
                 Survive the night or do it over
             </p>
+
+            <div class="ip-footer">
+                &copy; 2026 Mars Dostal. Subatomika and all related characters and elements are intellectual property of Mars Dostal. All rights reserved.
+            </div>
 
         </div>
     </div>
