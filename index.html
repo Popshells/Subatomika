@@ -18,122 +18,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     
-    <style>
-        .youtube-video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-        .youtube-video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .prologue.visible {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .prologue {
-            opacity: 0;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Override the external styles.css 50% max-width rule to allow full-width images */
-        .prologue img {
-            max-width: 100% !important;
-        }
-
-        .prologue-image {
-            width: 100%;
-            margin-bottom: 30px;
-        }
-
-        .info-card {
-            text-align: left;
-            background-color: rgba(15, 15, 15, 0.9);
-            border-left: 4px solid #39ff14;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-
-        .section-heading {
-            font-family: 'Share Tech Mono', monospace;
-            color: #ff0055; 
-            text-transform: uppercase;
-            font-size: 1.4em;
-            letter-spacing: 1.5px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 8px;
-        }
-
-        .info-card p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        /* Inline Feature Images and Captions */
-        .inline-feature-image {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            display: block;
-        }
-
-        .image-caption {
-            text-align: center;
-            font-size: 14px;
-            color: #ccc;
-            font-family: 'Share Tech Mono', monospace;
-            margin-bottom: 40px;
-            font-style: italic;
-        }
-
-        .social-card {
-            background-color: rgba(15, 15, 15, 0.9);
-            border: 1px solid #333;
-            border-top: 4px solid #39ff14;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            padding: 25px;
-            border-radius: 4px;
-            font-family: 'Share Tech Mono', monospace;
-            text-transform: uppercase;
-        }
-
-        .social-card a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s, text-shadow 0.3s;
-            font-size: 18px;
-        }
-
-        .social-card a:hover {
-            color: #39ff14;
-            text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
-        }
-
-        .ip-footer {
-            text-align: center;
-            margin-top: 60px;
-            font-size: 14px;
-            color: #666;
-            font-family: 'Share Tech Mono', monospace;
-            padding: 20px;
-        }
-    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const fadeImage = document.getElementById('fade-image');
@@ -160,7 +44,7 @@
             <div class="bg2">
                 <picture class="bg3 bg4">
                     <source media="(max-width: 768px)" srcset="images/AI_films_13_mobile.webp">
-                    <img src="images/AI_films_13.webp" srcset="images/AI_films_13.webp 2x" alt="MARS DOSTAL AI FILMS PRESENTS - Black and white grainy photograph of five actors in underground 1986 goth punk leather jackets, with Marce holding a small Super 8 camera" style="width: 100%; height: 100%; object-fit: cover;" />
+                    <img src="images/AI_films_13.webp" srcset="images/AI_films_13.webp 2x" alt="MARS DOSTAL AI FILMS PRESENTS - Black and white grainy photograph of five actors in underground 1986 goth punk leather jackets, with Marce holding a small Super 8 camera" style="width: 100%; height: auto; display: block;" />
                 </picture>
             </div>
         </div>
@@ -182,10 +66,9 @@
                 <div class="section-heading">WHAT: The World of Subatomika</div>
                 <p>SUBATOMIKA – EPISODE ONE: PARTY CRASHERS is a visceral punk subculture sci-fi thriller set right after Argentina ended a military dictatorship. It’s Friday, October 10, 1986. 3:00 AM in Buenos Aires. The nightmare is over, but the paranoia is still baked into the concrete.</p>
                 <p>The story follows a crew of cynical, underground young adults—Verushka, Rolly Bombón, Dana Red, Martu, and Marcel L—crashing parties in Palermo Viejo. They’re dressed in black leather, torn nylon, and spiked green hair, living like there’s no tomorrow. And they might be right. Because it’s Day Zero. The timeline is liquefying around them, changing and collapsing into something unrecognizable. A crew of stranded aliens are altering the past, rewriting reality to cover their tracks before human intelligence agencies can capture and weaponize them.</p>
-                <p>More than a visual adaptation of my original novel, Subatomika 1986, this is a time capsule, an attempt to let you look into the past and imagine its future the way Verushka does. It’s about the reckless, uncompromised energy of youth colliding with a massive, terrifying conspiracy. The visuals capture the gritty, fast-paced, punk-rock cadence of a generation that refused to stay quiet, set to a heavy synth-and-bass soundtrack composed by Votrox and myself.</p>
+                <p>More than a visual adaptation of my original novel, Subatomika 1986; this is a time capsule, an attempt to let you look into the past and imagine its future the way Verushka does. It’s about the reckless, uncompromised energy of youth colliding with a massive, terrifying conspiracy. The visuals capture the gritty, fast-paced, punk-rock cadence of a generation that refused to stay quiet, set to a heavy synth-and-bass soundtrack composed by Votrox and myself.</p>
             </div>
 
-            <!-- Image placed below the WHAT section -->
             <img src="images/actors_height.webp" alt="Actors Height Scale" class="inline-feature-image" />
 
             <div class="info-card">
@@ -195,7 +78,6 @@
                 <p>But Subatomika is too visual, too urgent to just sit on a hard drive as a manuscript. I needed a pilot to show, not just tell. I want to pitch this directly to Netflix or Prime Video, and to do that, they need to feel the vibe. AI gave me the Hollywood studio lot I couldn't afford. This isn’t some random generative experiment; this is a highly directed, fully realized proof-of-concept. It proves that the world of Subatomika is marketable, visually stunning, and ready for a green light. It’s a premium sci-fi thriller with a totally unique cultural fingerprint, and this pilot is the battering ram to get it onto screens.</p>
             </div>
 
-            <!-- Image placed below the WHY section -->
             <img src="images/SubPoster_42.webp" alt="Subatomika Poster" class="inline-feature-image" />
 
             <div class="info-card">
@@ -205,7 +87,6 @@
                 <p>I’ve been using a wild mix of open-source local tools, custom workflows (see images below), and every advanced AI model available to act as my crew. AI didn’t write or direct this; it assisted me through every brutal stage of pre-production, production, and post. From locking in the exact look of Rolly’s bleached hair to generating the temporal shifts and mixing the audio, this was a massive solo journey to prove that if the story is strong enough, the technology exists right now to put it right in front of your eyes.</p>
             </div>
 
-            <!-- Workflow App Images Section -->
             <img src="images/Custom_Frame_mixing%20App.webp" alt="Temporal Mix FXs App" class="inline-feature-image" />
             <div class="image-caption">Temporal Mix FXs and utilities custom App</div>
 

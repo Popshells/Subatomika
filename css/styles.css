@@ -5,52 +5,19 @@ html {
 
 /* General styles */
 body {
-    background-color: #2b2b2b; /* Dark grey background */
-    color: white; /* White text for readability */
+    background-color: #2b2b2b;
+    color: white;
     font-family: 'Exo 2', sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 24px; /* Default font size for larger screens */
-}
-
-/* General body font size improvements */
-body {
-    font-size: 24px; /* Default for larger screens */
-    line-height: 1.8; /* Improve readability */
-}
-
-/* Responsive styles for different screen sizes */
-@media (max-width: 768px) {
-    body {
-        font-size: 24px; /* Slightly larger font for tablets */
-    }
-
-    .card, .social-card {
-        font-size: 24px;
-        line-height: 1.8;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 24px; /* Increase font size for small screens */
-        line-height: 1.9; /* Further improve readability */
-    }
-
-    .card, .social-card {
-        font-size: 24px;
-        line-height: 1.8;
-    }
-
-    .scrollhint {
-        font-size: 1.5em;
-    }
+    font-size: 24px;
+    line-height: 1.8;
 }
 
 /* Fullscreen sections */
 .bg0, .bg1, .bg2, .bg3, .bg4 {
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: auto; /* Updated from 100vh to auto to prevent image cropping */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -61,8 +28,8 @@ body {
 /* Responsive images for fullscreen sections */
 .bg0 img, .bg1 img, .bg2 img, .bg3 img, .bg4 img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the section without distortion */
+    height: auto;
+    display: block; /* Ensures images scale proportionally */
 }
 
 /* Scroll hint styles */
@@ -78,73 +45,9 @@ body {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Ribbon styles */
-.ribbon {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 10;
-}
-
-.ribbon.top {
-    top: 0;
-}
-
-.ribbon.bottom {
-    bottom: 0;
-}
-
-.ribbon .big img, .ribbon .medium img {
-    max-width: 80%;
-    height: auto;
-}
-
-.ribbon .small {
-    font-size: 1.2em;
-    color: rgb(255, 153, 0);
-}
-
-/* Content card styles */
-.card {
-    width: 70%;
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 40px;
-    background-color: hsla(0, 0%, 15%, 0.7); /* Semi-transparent background */
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    text-align: left;
-    line-height: 1.6;
-}
-
-/* Video container for YouTube iframe */
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
-    margin: 20px auto;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
 }
 
 /* Fixed header overlay */
@@ -154,7 +57,7 @@ body {
     left: 0;
     width: 100%;
     height: 150px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -178,77 +81,153 @@ body {
     color: white;
 }
 
+.prologue {
+    opacity: 0;
+    max-width: 800px; /* Constraints for reading width */
+    margin: 0 auto;
+}
+
+.prologue.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
 .prologue img {
     display: block;
     margin: 20px auto;
-    max-width: 50%;
+    max-width: 100%; /* Allows full width for SVGs inside prologue */
     height: auto;
+}
+
+.prologue-image {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Neon/Punk Info Cards */
+.info-card {
+    text-align: left;
+    background-color: rgba(15, 15, 15, 0.9);
+    border-left: 4px solid #39ff14;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.section-heading {
+    font-family: 'Share Tech Mono', monospace;
+    color: #ff0055; 
+    text-transform: uppercase;
+    font-size: 1.4em;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+}
+
+.info-card p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Inline Feature Images and Captions */
+.inline-feature-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    display: block;
+}
+
+.image-caption {
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    font-family: 'Share Tech Mono', monospace;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Video container */
+.youtube-video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.youtube-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Social media card styles */
 .social-card {
-    width: 100%;
-    max-width: 600px;
+    background-color: rgba(15, 15, 15, 0.9);
+    border: 1px solid #333;
+    border-top: 4px solid #39ff14;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 25px;
+    border-radius: 4px;
+    font-family: 'Share Tech Mono', monospace;
+    text-transform: uppercase;
     margin: 20px auto;
-    padding: 15px;
-    background-color: rgba(30, 29, 29, 0.7);
-    color: white;
-    border-radius: 10px;
-    text-align: center;
 }
 
 .social-card a {
-    color: #ffcc00;
+    color: #ccc;
     text-decoration: none;
-    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+    font-size: 18px;
 }
 
 .social-card a:hover {
-    text-decoration: underline;
+    color: #39ff14;
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
 }
 
 .social-card i {
     margin-right: 10px;
 }
 
+/* IP Footer */
+.ip-footer {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 14px;
+    color: #666;
+    font-family: 'Share Tech Mono', monospace;
+    padding: 20px;
+}
+
+/* Legacy Card / Ribbon styles (kept for future use) */
+.ribbon { position: absolute; width: 100%; text-align: center; padding: 10px 0; z-index: 10; }
+.ribbon.top { top: 0; }
+.ribbon.bottom { bottom: 0; }
+.ribbon .big img, .ribbon .medium img { max-width: 80%; height: auto; }
+.ribbon .small { font-size: 1.2em; color: rgb(255, 153, 0); }
+.card { width: 70%; max-width: 600px; margin: 30px auto; padding: 40px; background-color: hsla(0, 0%, 15%, 0.7); color: white; border-radius: 10px; box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2); text-align: left; line-height: 1.6; }
+
 /* Responsive styles */
 @media (max-width: 768px) {
-    body {
-        font-size: 18px; /* Slightly larger font for tablets */
-    }
-
-    .card, .social-card {
-        width: 90%;
-        font-size: 16px;
-    }
-
-    .fixed-overlay img {
-        max-width: 90%;
-    }
+    body { font-size: 18px; }
+    .card, .social-card { width: 90%; font-size: 16px; gap: 15px; }
+    .fixed-overlay img { max-width: 90%; }
+    .social-card a { font-size: 16px; }
 }
 
 @media (max-width: 480px) {
-    body {
-        font-size: 24px; /* Larger font for mobile phones */
-    }
-
-    .card, .social-card {
-        font-size: 2px;
-        line-height: 1.8; /* Improve readability on smaller screens */
-    }
-
-    .fixed-overlay img {
-        max-width: 80%;
-    }
-
-    .scrollhint {
-        font-size: 1.2em;
-    }
-}
-/* Subtitle styles */
-.subtitle {
-    font-size: 1.5em; /* Adjust the size as needed */
-    font-weight: bold; /* Make it bold */
-    display: block; /* Ensure it takes up the full width */
-    margin-bottom: 10px; /* Add some space below */
+    body { font-size: 20px; line-height: 1.9; }
+    .card, .social-card { font-size: 16px; line-height: 1.8; } /* Fixed 2px bug */
+    .fixed-overlay img { max-width: 80%; }
+    .scrollhint { font-size: 1.2em; }
 }
